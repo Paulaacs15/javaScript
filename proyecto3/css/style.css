@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(228, 216, 222);
+}
+
+.reloj{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/fondo.png ");
+    border: 1rem solid  rgb(231, 149, 194);
+    background-size: cover;
+    border-radius: 50vh;
+    
+    /*contenedor le pone una sombra interna con 4 propiedades*/
+    /*primer parametro con respecto al eje x de izquierda a derecha, 
+    sombra sobre el eje y de arriba a abajo, tecer parmetro difumina la sombra, 
+    cuarto parametro es correspecto a la sombra */
+    box-shadow: inset 0px 0px 20px 5px  rgb(241, 172, 210);
+}
+/*permite crear elementos internos dentro de una clase, esas propiedades before permite crear subelementos*/
+.reloj::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(241, 172, 210);
+    border-radius: 50vh;
+    z-index: 10000;
+}
+/*crear tamaño para poder dibujar las manecillas del reloj, reservar tamaño*/
+.hora{
+    width: 150px;
+    height: 150px;
+}
+
+.minuto{
+    width: 190px;
+    height: 190px;
+}
+
+.segundo{
+    width: 250px;
+    height: 250px;
+}
+
+/*dibjar manecilla de la hora se dibuja con un before*/
+.hora::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 70px;
+    background: rgb(163, 41, 108);
+    z-index: 10;
+    border-radius: 50vh;
+}
+.minuto::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100px;
+    background:  rgb(247, 122, 191);
+    z-index: 11;
+    border-radius: 50vh;
+}
+.segundo::before{
+    content: '';
+    position: absolute;
+    width: 1.8px;
+    height: 150px;
+    background:  rgb(250, 156, 206);
+    z-index: 12;
+    border-radius: 50vh;
+}
+/*traer dos contenedores*/
+.hora, .minuto, .segundo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50vh;
+}
+/*movimiento de las manecillas*/
