@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(245, 156, 253);
+}
+.puntaje{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    background-color: rgb(110, 13, 89);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    -webkit-mask-image: url("../img/imagen.svg");
+    mask-image: url("../img/imagen.svg");
+}
+.item.selec{
+    background-color: antiquewhite;
+}
