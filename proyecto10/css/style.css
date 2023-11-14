@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo{
+    max-width: 12rem;
+    margin-left: 5px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: rgb(253, 252, 253);
+}
+
+.listaMenu{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+body{
+    background-color: rgb(247, 131, 218);
+}
+
+.listaMenu li a{
+    text-decoration: none;
+    color:rgb(226, 43, 165);
+    font-size: 15px;
+    margin-right: 12px;
+}
+
+.abrirMenu,
+.cerrarMenu{
+    display: none;
+}
+
+@media screen and (max-width: 500px){
+    .abrirMenu,
+    .cerrarMenu{
+        display: block;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .cerrarMenu{
+        background-color: transparent;
+        color:rgb(244, 247, 246)
+    }
+    .abrirMenu{
+        background-color: transparent;
+        color:rgb(5, 5, 5)
+    }
+    .menuPrincipal{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1.8rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(177, 85, 131);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.089);
+    }
+    .menuPrincipal.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+    .listaMenu{
+        flex-direction: column;
+        align-items: end;
+    }
+    .listaMenu li a{
+        color: rgb(247, 245, 248);
+    }
+}
